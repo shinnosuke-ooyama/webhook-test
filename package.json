@@ -1,0 +1,23 @@
+{
+  "name": "webhook-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://shinnosuke-ooyama@github.com/shinnosuke-ooyama/webhook-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shinnosuke-ooyama/webhook-test/issues"
+  },
+  "homepage": "https://github.com/shinnosuke-ooyama/webhook-test#readme",
+  "dependencies": {
+    "github-webhook-handler": "^0.7.0"
+  }
+}
