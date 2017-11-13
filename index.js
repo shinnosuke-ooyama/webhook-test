@@ -1,7 +1,8 @@
 let http = require('http')
 let createHandler = require('github-webhook-handler')
 let secret = process.env.SECRET;
-let handler = createHandler({ path: '/webhook', secret: 'myhashsecret' })
+let port = process.env.PORT || 80;
+let handler = createHandler({ path: '/webhook', secret })
 
 if (!secret) throw new Error('environment SECRET is not defined')
 
@@ -10,7 +11,7 @@ http.createServer(function (req, res) {
     res.statusCode = 404
     res.end('no such location')
   })
-}).listen(7777)
+}).listen(port)
 
 handler.on('error', function (err) {
   console.error('Error:', err.message)
@@ -29,3 +30,5 @@ handler.on('issues', function (event) {
     event.payload.issue.number,
     event.payload.issue.title)
 })
+
+console.log(`listen ${port}`)
