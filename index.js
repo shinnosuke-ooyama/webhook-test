@@ -31,4 +31,4 @@ handler.on('issues', function (event) {
     event.payload.issue.title)
 })
 
-console.log(`listen ${port}`)
+console.log(`listen ${port} ${secret}`)
