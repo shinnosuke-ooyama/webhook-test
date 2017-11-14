@@ -18,17 +18,18 @@ handler.on('error', function (err) {
 })
 
 handler.on('push', function (event) {
-  console.log('Received a push event for %s to %s',
-    event.payload.repository.name,
-    event.payload.ref)
+  console.log('Received an push event')
+  console.dir(event.payload)
 })
 
 handler.on('issues', function (event) {
-  console.log('Received an issue event for %s action=%s: #%d %s',
-    event.payload.repository.name,
-    event.payload.action,
-    event.payload.issue.number,
-    event.payload.issue.title)
+  console.log('Received an issue event')
+  console.dir(event.payload)
 })
 
-console.log(`listen ${port} ${secret}`)
+handler.on('project_card', function (event) {
+  console.log('Received an project card event')
+  console.dir(event.payload)
+})
+
+console.log(`listen ${port}`)
